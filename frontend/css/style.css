@@ -1,0 +1,208 @@
+/* Corpo */
+
+body  {
+  font-family: Nunito, sans-serif;
+  color: #1c1c1c;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-family: Asap, sans-serif;
+}
+
+h2, h3 {
+    font-family: Asap, sans-serif;
+    color: #000000;
+}
+
+.botao {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: #004aad;
+  font-size: .9em;
+  border-radius: 3px;
+
+}
+
+#app {
+  font-size: 20px;
+  color: #FFFFFF;
+  margin-left: 1em;
+  margin-right: 1em;
+
+}
+
+/* Navegação */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #004aad;
+}
+
+nav > a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 32px;
+  font-family: Yellowtail, serif;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+  width: 100%;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 0;
+  width: 100%;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* Cabeçalho */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: url("../img/checkup.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 2cm;
+
+}
+
+#sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 10px 20px 20px;
+  background-color: #004aad;
+  color: #FFFFFF;
+
+}
+
+#sobre .botao {
+
+  background-color: #f1f1f1;
+  color:  #1c1c1c;
+}
+
+/* Serviços */
+
+#servicos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top:  20px;
+
+}
+
+#fotos h2 {
+  margin-bottom: 20px;
+}
+
+#fotos img {
+
+  width: 100%;
+}
+
+/* contato */
+
+#contato {
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #FFFFFF;
+}
+
+#contato h2 {
+
+  color: #FFFFFF;
+
+}
+
+#topo {
+  color: #000000;
+  font-weight: 800;
+  font-size: 30px;
+  padding: 20px;
+}
+
+#titulo {
+  font-family: sans-serif;
+  color: #FFFFFF;
+  margin-left: 7%;
+}
+
+/** Formulário **/
+
+#subtitulo {
+  font-family: sans-serif;
+  color: #FFFFFF;
+  margin-left: 10%;
+}
+
+fieldset {
+  border: 0;
+
+}
+
+input, select, textarea, button {
+  border-radius: 5px;
+}
+
+.campo label {
+ margin-bottom: 0.2em;
+ color: #FFFFFF;
+ display: block;
+}
+
+fieldset.grupo .campo{
+  float: left;
+  margin-right: 1em;
+}
+
+.campo input[type="text"], .campo input[type="estado"], .campo select, .campo textarea {
+  padding: 0.2em;
+  border: 1px solid #FFFFFF;
+  box-shadow: 2px 2px 2px rgb(red, green, blue);
+  display: block;
+}
+
+.campo select option{
+  padding-right: 1em;
+}
+
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  background: #e0e0f0;
+}
+
+.campo select{
+  margin-bottom: 1em;
+}
+

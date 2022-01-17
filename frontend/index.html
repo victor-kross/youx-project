@@ -1,0 +1,225 @@
+
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&family=Nunito:wght@500&family=Yellowtail&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<title>YouX Medical Center</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<script>
+		var app = new Vue({ 
+		el: '#app',
+		data: {
+				form: {
+					nome: '',
+					sobrenome: '',
+					peso: '',
+					kg: '',
+					medicamento: null,
+					areaSaude: null,
+					descricao: ''
+				}
+		},
+		methods: {
+				enviar () {
+					const axios = require('axios');
+
+					const instance = axios.create({
+							baseURL: 'localhost:8080'
+						});
+
+					axios.post('/formulario', this.form)
+				}
+		}
+	});
+	</script>
+	<body>
+		<div id="app">
+		<div class="titulo">
+			<nav>
+				<h1>YouX Medical Center</h1>
+				<ul>
+					<li><a href="#sobre">Quem somos?</a></li>
+		
+				</ul>
+		
+			</nav>
+		</div>
+		
+			<header id="topo">
+				<h1></h1>
+				<p>Á Clínica Médica Youx está capacitada para atender diversas especialidades, exames e procedimentos de baixa, média e alta complexidade. Todas as suas consultas e seus exames em um só lugar!</p>
+				<p>Para seu maior conforto e melhor atendimento, informamos que não atendemos nenhum convênio ou plano de saúde, mas nosso atendimento tem preços acessíveis e a qualidade que você pode conferir aqui.</div></p>
+			</header>
+		
+			<section id="sobre">
+				<h2>Quem Somos?</h2>
+				<p>Somos YouX, a clínica que mais cresce e ajuda os pacientes de todo o Brasil. Temos especialistas em todas as áreas.</p>
+		
+			<div>
+				
+				<img src="img/blurb-consulta.png">
+				<h3>MARQUE SUA CONSULTA</h3>
+				<p>Agende sem complicações</p>
+			</div>
+		
+					<div>
+				
+				<img src="img/blurb-exames.png">
+				<h3>EXAMES</h3>
+				<p>Conheça os exames realizados em nosso Centro Médico</p>
+			</div>
+		
+					<div>
+				
+				<img src="img/blurb-estetica.png">
+				<h3>ESTÉTICA</h3>
+				<p>Conheça o que há de mais novo em procedimentos estéticos</p>
+			</div>
+		
+					<div>
+				
+				<img src="img/blurb-checkup.png">
+				<h3>CHECK-UP</h3>
+				<p>Realize seus exames de check-up completo</p>
+			</div>
+		
+		</a>
+		
+		<section id="fotos">
+			<img src="img/clinica.jpg">
+		</section>
+		
+		<div>
+		
+			<form>
+				<fieldset>
+					<div class="campo">
+						<label>Nome</label>
+						<input type="text" name="nome" id="nome" required v-model="form.nome">
+		
+						</div>
+		
+						<div class="campo">
+							<label>Sobrenome</label>
+							<input type="text" name="sobrenome" id="sobrenome" required v-model="form.sobrenome">
+		
+						</div>
+					</div>
+
+					<div class="campo">
+						<label>CPF</label>
+						<input type="text" name="cpf" id="cpf" required v-model="form.cpf">
+					</div>
+
+					<div class="campo">
+						<label>Data de Nascimento</label>
+						<input type="text" name="nascimento" id="nascimento" required v-model="form.nascimento">
+					</div>
+		
+					<div class="campo">
+						<label>Peso</label>
+						<input type="text" name="peso" id="peso" required v-model="form.peso">
+					</div>
+		
+					<div class="campo">
+						<label>Altura</label>
+						<input type="text" name="altura" id="altura" required v-model="form.altura">
+					</div>
+					<div class="campo">
+						<label>Está tomando algum medicamento?</label>
+						<label>
+							<input type="radio" name="medicamento" :value="true" required v-model="form.medicamento">Sim
+						</label>
+						<label>
+							<input type="radio" name="medicamento" :value="false" required v-model="form.medicamento">Não
+						</label>
+					</div>
+					<div class="campo">
+						<label>Escolha Abaixo</label>
+						<select id="senioridade" v-model="form.areaSaude">
+						
+							<option selected disabled value="">Qual área da saúde procura?</option>
+							<option value="ODONTOLOGISTA">Odontologista</option>
+							<option value="CARDIOLOGISTA">Cardiologista</option>
+							<option value="DERMATOLOGISTA">Dermatologista</option>
+							<option value="GINECOLOGISTA">Ginecologista</option>
+							<option value="UROLOGISTA">Urologista</option>
+							<option value="ORTOPEDISTA">Ortopedista</option>
+							<option value="PEDIATRA">Pediatra</option>
+							<option value="OFTAMOLOGISTA">Oftamologista</option>
+							<option value="PSIQUIATRA">Psiquiatria</option>
+							<option value="ODONTOLOGISTA">Oncologista</option>
+							<option value="OTORRINOLARINGOLOGISTA">Otorrinolaringologista</option>
+							<option value="NEUROLOGISTA">Neurologista</option>
+							<option value="HEMATOLOGISTA">Hematologista</option>
+							<option value="OUTROS">Outros</option>
+						</div>
+						
+						
+						<select>
+						<div class="campo">
+							<label>Escolha seu Estado</label>
+							<select id="estado" v-model="form.regiao">
+								<option selected disabled value="">Clique aqui.</option>
+								<option value="ACRE_AP">Amapá (AP)</option>
+								<option value="ALAGOAS_AL">Alagoas (AL)</option>
+								<option value="AMAPA_AP">Amapá (AP)</option>
+								<option value="AMAZONAS_AM">Amazonas (AM)</option>
+								<option value="BAHIA_BA">Bahia (BA)</option>
+								<option value="CEARA_CE">Ceará (CE)</option>
+								<option value="DISTRITO_FEDERAL_DF">Distrito Federal (DF)</option>
+								<option value="ESPIRITO_SANTO_ES">Espirito Santo (ES)</option>
+								<option value="GOIAS_GO">Goiás (GO)</option>
+								<option value="MARANHAO_MA">Maranhão (MA)</option>
+								<option value="MATO_GROSSO_MT">Mato Grosso (MT)</option>
+								<option value="MATO_GROSSO_DO_SUL_MS">Mato Grosso do Sul (MS)</option>
+								<option value="MINAS_GERAIS_MG">Minas Gerais (MG)</option>
+								<option value="PARA_PA">Pará (PA)</option>
+								<option value="PARAIBA_PB">Paraíba (PB)</option>
+								<option value="PARANA_PR">Paraná (PR)</option>
+								<option value="PERNAMBUCO_PE"> Pernambuco (PE)</option>
+								<option value="PIAUI-PI"> Piauí (PI) </option>
+								<option value="RIO_DE_JANEIRO_RJ"> Rio de Janeiro (RJ) </option>
+								<option value="RIO_GRANDE_DO_NORTE_RN"> Rio Grande do Norto (RN) </option>
+								<option value="RIO_GRANDE_DO_SUL_RS"> Rio Grande do Sul (RS) </option>
+								<option value="RONDONIA_RO"> Rondônia (RO) </option>
+								<option value="RORAIMA_RR"> Roraima (RR)</option>
+								<option value="SANTA_CATARINA_SC"> Santa Catarina (SC)</option>
+								<option value="SAO_PAULO_SP"> São Paulo (SP)</option>
+								<option value="SERGIPE_SE"> Sergipe (SE)</option>
+								<option value="TOCANTINS_TO"> Tocantins (TO)</option>
+							</div>
+						</select>
+					</div>
+					<fieldset>
+						<div class="campo">
+							<br>
+							<label>Caso necessário, conte-nos mais:</label>
+							<textarea row="6" style="width: 26em" id="experiencia"></textarea>
+						</div>
+		
+						<button class="botao" type="submit" @click="enviar">Enviar</button>
+					</fieldset>
+			</form>
+		
+			<section id="contato">
+				<h2>Contato</h2>
+				<p>Entre em Contato</p>
+		
+				<div>
+					<img src="img/tel.png" alt="Telefone">
+					<p>(35) 9934-5544</p>
+				</div>
+		
+					<div>
+					<img src="img/mail.png" alt="Email">
+					<p>youxmedical@hotmail.com</p>
+				</div>
+		
+		</div>
+	</body>
+</html>
